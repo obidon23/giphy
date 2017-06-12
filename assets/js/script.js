@@ -4,7 +4,7 @@
       // displaygifInfo function re-renders the HTML to display the appropriate content
      
       function displayGifInfo() {
-      	$("<div class='col-lg-4 images>").empty();
+      	$("#imageArea").empty();
       	var gif = $(this).attr("data-name");
         var queryURL = 'https://api.giphy.com/v1/gifs/search?q="' + gif +'"&api_key=dc6zaTOxFJmzC&fmt=JSON&limit=3"';
         // Creating an AJAX call for the specific gif button being clicked
@@ -16,7 +16,7 @@
           console.log(response);
           var results = response.data;
 
-          for (i=0; i < response.data.length; i++) {
+          for (i=8; i > -1; i--) {
           // Creating a div to hold the gif
           var gifDiv = $("<div class='col-lg-4 images'>");
     
@@ -67,8 +67,8 @@
         renderButtons();
       });
 
-      $(".gif").on("click", function() {
-      	alert("you clicked an image");
+      $(document).on("click", ".gif", function() {
+
 		var state = $(this).attr("data-state") ;     // =============================================
       console.log(state);
       if (state==="still") {
