@@ -1,6 +1,6 @@
 
 // Initial array of gifs
-      var gifs = [];
+      var gifButtons = [];
       // displaygifInfo function re-renders the HTML to display the appropriate content
      
       function displayGifInfo() {
@@ -28,7 +28,7 @@
           // Appending the image
   			console.log(imgURLStill);
           gifDiv.append(image).addClass("gifDiv");
-          image.attr("data-still", imgURLStill).attr("data-animate", imgURLAnimated).attr("data-state", "still");
+          image.addClass("gif").attr("data-still", imgURLStill).attr("data-animate", imgURLAnimated).attr("data-state", "still");
           // Putting the entire gif above the previous gifs
           $("#imageArea").prepend(gifDiv);
         };
@@ -40,16 +40,16 @@
         // (this is necessary otherwise you will have repeat buttons)
         $("#buttonArea").empty();
         // Looping through the array of gifs
-        for (var i = 0; i < gifs.length; i++) {
+        for (var i = 0; i < gifButtons.length; i++) {
           // Then dynamicaly generating buttons for each gif in the array
           // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
           var a = $("<button>");
           // Adding a class of gif to our button
           a.addClass("btn btn-info btn-block buttons");
           // Adding a data-attribute
-          a.attr("data-name", gifs[i]);
+          a.attr("data-name", gifButtons[i]);
           // Providing the initial button text
-          a.text(gifs[i]);
+          a.text(gifButtons[i]);
           // Adding the button to the buttons-view div
           $("#buttonArea").append(a);
         }
@@ -60,14 +60,14 @@
         // This line grabs the input from the textbox
         var gifCategory = $("#newButton").val().trim();
         // Adding gif from the textbox to our array
-        gifs.push(gifCategory);
-        console.log(gifs);
-        $("input").empty();
+        gifButtons.push(gifCategory);
+        console.log(gifButtons);
+        $("#newButton").val("");
         // Calling renderButtons which handles the processing of our gif array
         renderButtons();
       });
 
-      $(".gifDiv").on("click", function() {
+      $(".gif").on("click", function() {
       	alert("you clicked an image");
 		var state = $(this).attr("data-state") ;     // =============================================
       console.log(state);
