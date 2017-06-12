@@ -1,0 +1,78 @@
+#buttonName {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	background-color: lightgrey;
+
+}
+
+#submit {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.header {
+	font-family: 'Times New Roman', serif;
+	color: #fff;
+	text-align: center;	
+	background-color: #5566aa;
+	padding: 10px;
+	height: 100px;
+}
+
+h2 {
+	color: #fff;
+	font-family: 'helvetica', arial, sans-serif;
+	background-color: #5566aa;
+	padding: 10px;
+}
+
+.dropdown {
+	margin: 10px 0;
+}
+
+.panel-body {
+	background-color: #777;
+	color: #5566aa;
+	text-decoration: underline;
+	
+}
+
+button[type="submit"] {
+margin-top: -9px;
+color: #fff;
+
+}
+
+#newButton {
+	font-size: 20px;
+	margin-top: 30px;
+	color: blue;
+}
+
+.buttons {
+	margin: 0 auto;
+	display: block;
+	margin: 10px 0;
+}
+
+.buttonArea {
+	background-color: lightgrey;
+	height: 1000px	;
+}
+
+.imageArea {
+	padding: 25px;
+	float: left;
+	display: block;
+	margin: 0 auto;
+}
+
+img {
+	display: block;
+	margin: 0 auto;
+}
+
+.gifDiv {
+	padding: 5px;
+
+}
