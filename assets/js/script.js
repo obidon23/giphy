@@ -4,8 +4,8 @@
       // displaygifInfo function re-renders the HTML to display the appropriate content
      
       function displayGifInfo() {
-      	$("#imageArea").empty();
-      	var gif = $(this).attr("data-name");
+        $("#imageArea").empty();
+        var gif = $(this).attr("data-name");
         var queryURL = 'https://api.giphy.com/v1/gifs/search?q="' + gif +'"&api_key=dc6zaTOxFJmzC&fmt=JSON&limit=3"';
         // Creating an AJAX call for the specific gif button being clicked
         console.log(queryURL);
@@ -15,7 +15,7 @@
         }).done(function(response) {
           console.log(response);
           var results = response.data;
-
+          $("#imageArea").html("<h3>Results for: " + gif);
           for (i=8; i > -1; i--) {
           // Creating a div to hold the gif
           var gifDiv = $("<div class='col-lg-4 images'>");
@@ -26,11 +26,11 @@
           // Creating an element to hold the image
           var image = $("<img>").attr("src", imgURLStill);
           // Appending the image
-  			console.log(imgURLStill);
+        console.log(imgURLStill);
           gifDiv.append(image).addClass("gifDiv");
           image.addClass("gif").attr("data-still", imgURLStill).attr("data-animate", imgURLAnimated).attr("data-state", "still");
           // Putting the entire gif above the previous gifs
-          $("#imageArea").prepend(gifDiv);
+          $("#imageArea").append(gifDiv);
         };
       })
   }
@@ -40,6 +40,7 @@
         // (this is necessary otherwise you will have repeat buttons)
         $("#buttonArea").empty();
         // Looping through the array of gifs
+        $("#buttonArea").html("<h2>Click a Button</h2>");
         for (var i = 0; i < gifButtons.length; i++) {
           // Then dynamicaly generating buttons for each gif in the array
           // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
@@ -69,7 +70,7 @@
 
       $(document).on("click", ".gif", function() {
 
-		var state = $(this).attr("data-state") ;     // =============================================
+    var state = $(this).attr("data-state") ;     // =============================================
       console.log(state);
       if (state==="still") {
         var animate = $(this).attr("data-animate");
