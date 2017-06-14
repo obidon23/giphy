@@ -61,11 +61,15 @@
         // This line grabs the input from the textbox
         var gifCategory = $("#newButton").val().trim();
         // Adding gif from the textbox to our array
+        if (gifCategory.length > 0) {
+
         gifButtons.push(gifCategory);
         console.log(gifButtons);
         $("#newButton").val("");
         // Calling renderButtons which handles the processing of our gif array
         renderButtons();
+      }
+
       });
 
       $(document).on("click", ".gif", function() {
