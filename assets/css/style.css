@@ -50,6 +50,10 @@ h3 {
 	border-radius: 5px;	
 }
 
+.col-md-4 input#newButton {
+	width: 65%;
+}
+
 .btn.btn-info {
 	background-color: #5566aa;
 

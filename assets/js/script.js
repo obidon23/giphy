@@ -18,7 +18,7 @@
           $("#imageArea").html("<h3>Results for: " + gif);
           for (i=8; i > -1; i--) {
           // Creating a div to hold the gif
-          var gifDiv = $("<div class='col-lg-4 images'>");
+          var gifDiv = $("<div class='col-lg-4 col-md-4 col-xs-12 images'>");
     
           // Retrieving the URL for the image
           var imgURLStill = response.data[i].images.fixed_height_still.url;
